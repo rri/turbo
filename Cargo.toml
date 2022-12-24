@@ -1,0 +1,16 @@
+[package]
+name = "turbo"
+version = "0.1.0"
+description = "a lightweight terminal-based modal editor for working with structured text"
+authors = ["Ramnath R Iyer <riyer@optimix.dev>"]
+license = "Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/rri/fluxo"
+edition = "2021"
+categories = ["text-editors"]
+keywords = ["text-editors"]
+
+[dependencies]
+clap = { version = "4.0.32", features = ["cargo", "derive", "env", "string"] }
+crossterm = "0.25.0"
+exitcode = "1.1.2"
