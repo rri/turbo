@@ -10,9 +10,11 @@ use std::io::Result;
 #[command(arg_required_else_help(true))]
 #[command(color(ColorChoice::Always))]
 #[command(disable_version_flag(true))]
-#[command(help_template("{name} v{version}\n{about}\n\n{usage-heading} {usage}\n\n{all-args}"))]
+#[command(help_template(
+    "{before-help}{name} v{version}\n{about}\n\nUSAGE:\n{tab}{usage}\n\nARGUMENTS:\n{positionals}\n\nOPTIONS:\n{options}{after-help}"
+))]
 struct Args {
-    /// (Optional) Paths to file(s) to open (or create upon save).
+    /// (Optional) Paths to file(s) to create (upon save) or open.
     file: Vec<String>,
 
     /// Print version information and exit.
