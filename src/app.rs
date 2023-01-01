@@ -7,7 +7,6 @@ use std::io::Result;
 #[derive(Parser)]
 #[command(about)]
 #[command(version)]
-#[command(arg_required_else_help(true))]
 #[command(color(ColorChoice::Always))]
 #[command(disable_version_flag(true))]
 #[command(help_template(
