@@ -1,5 +1,7 @@
 //! Core top-level application library where command-line options are evaluated.
 
+use crate::buf::Buf;
+use crate::edt::Win;
 use clap::{ColorChoice, Parser};
 use std::io::Result;
 
@@ -31,5 +33,11 @@ pub fn run() -> Result<()> {
         return Ok(());
     }
 
-    Ok(())
+    let mut buffers: Vec<Buf> = vec![];
+
+    for file in args.file {
+        buffers.push(Buf::new().load(file)?)
+    }
+
+    Win::run(&mut buffers)
 }
